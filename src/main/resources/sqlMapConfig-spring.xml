@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--dateSource配置-->
+    <properties resource="db.properties"></properties>
+    <!--自定义别名-->
+    <typeAliases>
+        <!--单个别名定义-->
+        <typeAlias type="com.yg.domain.User" alias="user"></typeAlias>
+        <!--批量别名定义，扫描包下的类，别名为类名（首字母大写或者小写都可以）-->
+        <package name="com.yg.domain"></package>
+    </typeAliases>
+    <!--配置环境与下面对应-->
+    <environments default="mysql">
+        <!--配置mysql的环境-->
+        <environment id="mysql">
+            <!--配置事务的类型-->
+            <transactionManager type="JDBC"></transactionManager>
+            <!--配置链接数据库信息：用的是数据库连接池-->
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--告知mybatis映射配置的位置-->
+    <mappers>
+        <!--<mapper resource="com\yg\dao\IUserDao.xml"/>-->
+        <!--package注册指定包下的所有 mapper 接口-->
+        <package name="com.yg.dao"></package>
+        <!--会找到dao接口和对应的dao映射配置文件userdao.xml-->
+    </mappers>
+</configuration>
