@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="new-cartoon:war exploded2">
+    <output-path>$PROJECT_DIR$/out/artifacts/new_cartoon_war_exploded2</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="new-cartoon" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="new-cartoon/web/Web" />
+    </root>
+  </artifact>
+</component>
